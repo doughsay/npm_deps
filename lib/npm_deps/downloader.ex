@@ -83,6 +83,7 @@ defmodule NpmDeps.Downloader do
     [
       ssl: [
         verify: :verify_peer,
+        ciphers: :ssl.cipher_suites(:all, :"tlsv1.2"),
         cacertfile: String.to_charlist(CAStore.file_path()),
         depth: 2,
         customize_hostname_check: [
